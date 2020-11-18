@@ -1,0 +1,21 @@
+.Title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.quotes {
+  text-align: center;
+  border: 5px solid blue;
+  padding: 40px 10px;
+  background: #ff9933;
+  margin-bottom: 50px;
+}
+
+.return {
+  float: right;
+}
+
+.return a {
+  color: white;
+}
+/*# sourceMappingURL=tweets.css.map */
