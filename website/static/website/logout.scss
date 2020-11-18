@@ -1,0 +1,25 @@
+body{
+
+    div.logoutbg img{
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        filter: blur(8px);
+        position: absolute;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .text-muted{
+        left: 45%;
+        position: absolute;
+
+        a{
+            color:white
+        }
+    }
+}

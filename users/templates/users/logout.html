@@ -1,0 +1,20 @@
+{% extends "website/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+
+
+<!--Link to CSS -->
+<link rel="stylesheet" href="{% static "website/logout.css" %}">
+
+<div class="logoutbg"><img src="{% static "website/logoutBG.jpg" %}" alt="logoutBG"></div>
+
+<h1>You have been logged out </h1>
+<hr>
+<small class="text-muted">
+    <button class="btn btn-success"><a href="{% url 'login' %}"> Log In </a></button>
+    <button class="btn btn-primary"><a href="http://127.0.0.1:8000/"> Home </a></button>
+</small>
+
+{% endblock content %}

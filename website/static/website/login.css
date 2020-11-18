@@ -1,0 +1,40 @@
+body div.filter img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+body div.content-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: aliceblue;
+  padding: 35px 20px;
+}
+
+body div.content-section div.logo {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+body div.content-section fieldset {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+body div.content-section form {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+body div.content-section form:hover {
+  opacity: 1;
+  padding: 45px 30px;
+}
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,29 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body div.body {
+  position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(red), color-stop(orange), to(yellow));
+  background: linear-gradient(red, orange, yellow);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body div.content-section {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+body div.content-section div.media {
+  display: block;
+  text-align: center;
+}
+/*# sourceMappingURL=profile.css.map */

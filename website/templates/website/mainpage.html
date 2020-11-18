@@ -1,0 +1,50 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+{% csrf_token %}
+
+<link rel="stylesheet" href="{% static 'website/main.css' %}">
+
+<div class="bg"><img src="{% static "website/MainBG.jpg" %}" alt="MainBG"></div>
+
+<div class="title"> 
+    <h1>Intro to Programming Final Project</h1>
+    <h2>   by Fabio Espinoza </h2>
+</div>
+
+<div class="grid-container">
+    <div class="empty-item"></div> 
+    
+    <div class="grid-item-1">
+        <a href="{% url 'login' %}">
+        <img src="{% static "website/LoginBG.jpg" %}" alt="loginBG">
+        <h2>Login</h2>
+        </a>
+    </div>
+    
+    <div class="grid-item-2">
+        <a href="{% url 'website-quotes' %}">
+        <img src="{% static "website/ItemBG.jpg" %}" alt="itemBG">
+        <h2>Item</h2>
+        </a>
+    </div>
+
+    <div class="grid-item-3">
+        <img src="{% static "website/BlogBG.jpg" %}" alt="blogBG">
+        <h2>Blog</h2>
+    </div>
+
+    <div class="empty-item"></div> </div>
+</div>
+
+{% if user.is_authenticated %}
+    <div style="float: right; margin-right:20px;color:white;">
+    <a href="{% url 'logout' %}"><button class="btn btn-danger"> Log Out </button></a> <br>
+    <a href="{% url 'profile' %}"><i class='fas fa-user' style='font-size:24px; margin-top:5px;color:white'></i> {{user}}</a>
+    </div>
+{% endif %}
+
+{% endblock content %}

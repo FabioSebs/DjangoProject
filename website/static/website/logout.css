@@ -1,0 +1,24 @@
+body div.logoutbg img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+body h1 {
+  text-align: center;
+}
+
+body .text-muted {
+  left: 45%;
+  position: absolute;
+}
+
+body .text-muted a {
+  color: white;
+}
+/*# sourceMappingURL=logout.css.map */

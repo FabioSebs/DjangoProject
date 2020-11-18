@@ -1,0 +1,21 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="Title">
+        <h1> 10 Naruto Quotes </h1>
+    </div>
+    
+    <div class="quotes">
+    {% for quote in quotes %}
+        <h5 class="fancy">{{quote}}</h5>
+        <br>
+    {% endfor %}
+    </div>
+
+    <div class="return">
+        <button class="btn btn-danger"><a href="http://127.0.0.1:8000/"> Home </a></button>
+    </div>
+
+
+{% endblock content %}

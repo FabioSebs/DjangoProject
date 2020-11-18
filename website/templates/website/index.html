@@ -1,0 +1,40 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+
+{% csrf_token %}
+        <!-- Link to my Static CSS Files -->
+        <link rel="stylesheet"  type="" href="{% static 'website/index.css' %}">
+
+<main data-barba="container" data-barba-namespace="login">
+    <div class="filter"> <img src="{% static "website/NarutoBG.jpg" %}" alt="sky"></div>
+    <form action="" id="awanForm" onsubmit="return validate()">
+        <div class="logo" id="formLogo"> <img src="{% static "website/NarutoIcon.png " %}" alt="" height="100px" width="100px"></div>
+        <div class="username">
+            <label for="username"><i class="glyphicon glyphicon-user"></i>Username</label>
+            <input type="text" name="username" id="name" placeholder = "JohnDoe123" required>
+            <h6 id="errorUser"></h6>
+        </div>
+
+        <div class="password">
+            <label for="password"><i class="glyphicon glyphicon-lock"></i>Password</label>
+            <input type="password" name="password" id="pwd" placeholder="Password" required>
+            <h6 id="errorPwd"></h6>
+        </div>
+
+        <div class="gender">
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Unspecified">Unspecified</option>
+            </select>
+        </div>
+        <div class="buttonSub">
+        <button type="submit" class="sub"> Submit </button>
+        <button type="reset" class="res"> Reset </button>
+        </div>
+    </form>
+</main>
+<script defer src="{% static 'website/script.js' %}"></script>
+{% endblock content %}

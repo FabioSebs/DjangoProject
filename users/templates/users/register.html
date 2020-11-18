@@ -1,0 +1,48 @@
+{% extends "website/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+
+
+<!-- Link to my Static CSS Files -->
+<link rel="stylesheet"  type="" href="{% static 'website/login.css' %}">
+
+<!-- Background Div -->
+<div class="filter"> <img src="{% static "website/NarutoBG.jpg" %}" alt="narutoBG"></div>
+
+
+<!-- Form -->
+<main data-barba="container" data-barba-namespace="login">
+<div class="content-section" id="loginForm">
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Form Logo-->
+        <div class="logo" id="formLogo"> <img src="{% static "website/NarutoIcon.png " %}" alt="" height="100px" width="100px"></div>
+
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">
+                Join the Leaf Village!
+            </legend>
+        </fieldset>
+
+        {{form|crispy}}
+
+        <div class="from-group">
+            <button class="btn btn-outline-info" type="submit">
+                Sign Up
+            </button>
+        </div>
+
+        <div>
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="{% url 'login' %}"> Log In </a>
+            </small>
+        </div>
+    </form>
+</div>
+</main>
+
+<script defer src="{% static 'website/login.js' %}"></script>
+{% endblock content %}

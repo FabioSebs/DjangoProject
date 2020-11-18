@@ -1,0 +1,41 @@
+body{
+
+    div.filter img{
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        filter: blur(8px);
+        position: absolute;
+        background-repeat: no-repeat;
+    }
+    
+    div.content-section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: aliceblue;
+        padding: 35px 20px;
+
+        div.logo{
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        fieldset {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        form{
+            transition: 0.8s;
+            &:hover{
+                opacity: 1;
+                padding: 45px 30px;
+            }
+        }
+    }
+
+
+
+}
