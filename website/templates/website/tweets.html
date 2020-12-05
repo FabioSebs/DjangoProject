@@ -8,16 +8,63 @@
         <h1> 10 Naruto Quotes </h1>
     </div>
     
-    <div class="quotes">
+    <div class="Show">
+        <button class="btn btn-success" id="showbutton"> Get Quotes </button>
+    </div>
+
+
+    <div class="quotes" id="tweets">
     {% for quote in quotes %}
         <h5 class="fancy">{{quote}}</h5>
         <br>
     {% endfor %}
     </div>
 
+    <div class="engquotes" id="engtweets">
+        {% for tweet in translated %}
+            <h5 class="fancy">{{tweet}}</h5>
+            <br>
+        {% endfor %}
+    </div>
+
+    <button id="translate" class="btn btn-success">Translate</button>
+
     <div class="return">
         <button class="btn btn-danger"><a href="http://127.0.0.1:8000/"> Home </a></button>
     </div>
 
+    <!-- Alert and Appear -->
+    <script type="text/python" id="script">
+        from browser import console, alert, document
 
+        tweets = document['tweets']
+        button = document['showbutton']
+
+
+        def show(e):
+            tweets.style.opacity = 1
+            button.style.opacity = 0
+            console.log("This is powered by Brython")
+            alert("This DOM Manipulation is powered by Brython")
+        
+        button.bind('click', show)
+    </script>
+
+    <!-- Appear English Tweets -->
+    <script type="text/python" id="script2">
+        from browser import console, alert, document
+
+        tweets = document['engtweets']
+        button = document['translate']
+
+        def appear(e):
+            tweets.style.opacity = 1
+            button.style.opacity = 0
+            alert("This translation is powered by Brython")
+        
+        button.bind('click', appear)
+
+    </script>
+    
+    
 {% endblock content %}

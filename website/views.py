@@ -15,7 +15,8 @@ class PostListView(ListView):
     
 def tweets(request):
     context ={
-        'quotes' : ts.CreateTweets()
+        'quotes' : ts.CreateTweets(),
+        'translated': ts.TweetsTranslated()
         } 
     
     return render(request, 'website/tweets.html', context)

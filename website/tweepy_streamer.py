@@ -1,12 +1,14 @@
+import website.twitter_credentials as twitter_credentials
+import numpy as np
+import pandas as pd
+
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 from tweepy import API
 from tweepy import Cursor
+from google_trans_new import google_translator
 
-import website.twitter_credentials as twitter_credentials
-import numpy as np
-import pandas as pd
 
 
 ######TWITTER CLIENT ##########
@@ -124,11 +126,33 @@ def CreateTweets():
     df = tweet_analyzer.tweet_list(tweets)
     return(df)
 
+def TweetsTranslated():
+    translator = google_translator()
     
+    twitter_client = TwitterClient()
+    tweet_analyzer = TweetAnalyzer()
+    api = twitter_client.get_twitter_client_api()  
+    
+    tweets = api.user_timeline(screen_name="naruto_quote", count=10, tweet_mode='extended')
+    
+    df = tweet_analyzer.tweet_list(tweets)
+    
+    english_tweets = []
+    
+    for i in df:
+        t = translator.translate(i, lang_src='id', lang_tgt='en')
+        english_tweets.append(t)
+    
+    return english_tweets
+        
+
+    
+    
+
     
     
 if __name__ == "__main__":
-    pass
+    TweetsTranslated()
         
  
      

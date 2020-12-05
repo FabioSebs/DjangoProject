@@ -11,9 +11,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Link to Icons -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <!-- Link to Brython -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.0/brython.min.js" integrity="sha512-6xoV9qvQHPMnIFWzWrRwuq25qpgJ8FiGKekJ+7Bstb8/4XRC98k2c49IpdUVc5QitMNHKWPcFjFUkDxdIjJ7Nw==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.0/brython_stdlib.min.js" integrity="sha512-QbMgbJbXnZv0V/+jpdd68nkyOrYwP/UsJAH/TGQmVHgwwrxI7QNKzRn3dKuG3kG/lVWHx5hYXBISk7zX86TInw==" crossorigin="anonymous"></script>
 
     </head>
-    <body>
+    <body onload="brython()">
 
         {% if messages %}
             {% for message in messages %}
