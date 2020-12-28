@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 #Django has a pregenerated Form that can be inherited from and added to
 from django.contrib.auth.forms import UserCreationForm
 # I import a model Profile from my models file
-from .models import Profile
+from .models import Profile, Quotes
+#I import a model Quotes from my models file
+
 
 #I make my own defined class called UserRegisterForm and it inherits from UserCreationForm
 class UserRegisterForm(UserCreationForm):
@@ -38,4 +40,14 @@ class UserUpdateForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['image']
+        fields = [
+            'image',
+            ]
+        
+class QuoteInsertForm(forms.ModelForm):
+    class Meta:
+        model = Quotes
+        fields = [
+            'quote',
+            'author'
+        ]

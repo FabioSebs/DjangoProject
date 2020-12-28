@@ -1,0 +1,23 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'website/spotify.css' %}">
+
+<div class="main">
+
+    <div class="season1">Blue Bird <a href="{{Bluebird}}"><button id="play1">⮞</button></a></div>
+    <div class="season2">Netsujo No Spectrum <a href="{{Netsujo}}"><button id="play2">⮞</button></a></div>
+    <div class="season3">Sign <a href="{{Sign}}"><button id="play3">⮞</button></a></div>
+    <div class="season4">Again <a href="{{Again}}"><button id="play4">⮞</button></a></div>
+    <div class="season5">Totsugeki Rock <a href="{{Totsegi}}"><button id="play5">⮞</button></a></div>
+    <div class="season6">Cha La Head Cha La <a href="{{DBZ}}"><button id="play6">⮞</button></a></div>
+    <div class="season7">The WORLD <a href="{{DeathNote}}"><button id="play7">⮞</button></a></div>
+    <div class="season8">Departure <a href="{{Departure}}"><button id="play8">⮞</button></a></div>
+
+
+</div>
+
+
+
+{% endblock content %}

@@ -6,14 +6,14 @@ from PIL import Image
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default = 'default.jpg', upload_to='profile_pics')
+    image = models.FileField(upload_to='profile_pics', blank= True, default = 'default.jpg')
     
     
     def __str__(self):
         return f'{self.user.username} Profile'
     
-    def save(self):
-        super().save
+    def save(self, *args, **kwargs):
+        super(Profile, self).save(*args, **kwargs)
         
         img = Image.open(self.image.path)
         
@@ -21,3 +21,16 @@ class Profile(models.Model):
             output_size = (300 , 300)
             img.thumbnail(output_size)
             img.save(self.image.path)
+            
+class Quotes(models.Model):
+    profile = models.OneToOneField(Profile, on_delete= models.CASCADE)
+    quote = models.CharField(max_length=300, default = " ")
+    author = models.CharField(max_length=30, default = " ")
+    def __str__(self):
+        return f'{self.profile.user.username} Favorite Quote : {self.quote} by {self.author} '
+        
+    
+   
+
+    
+    

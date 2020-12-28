@@ -124,4 +124,9 @@ body div.title {
   position: relative;
   color: white;
 }
+
+body div.quote {
+  text-align: center;
+  color: white;
+}
 /*# sourceMappingURL=main.css.map */

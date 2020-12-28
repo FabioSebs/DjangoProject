@@ -33,8 +33,10 @@
     </div>
 
     <div class="grid-item-3">
+        <a href="{% url 'website-spotify'%}" >
         <img src="{% static "website/BlogBG.jpg" %}" alt="blogBG">
         <h2>Music</h2>
+        </a>
     </div>
 
     <div class="empty-item"></div> </div>
@@ -45,6 +47,14 @@
     <a href="{% url 'logout' %}"><button class="btn btn-danger"> Log Out </button></a> <br>
     <a href="{% url 'profile' %}"><i class='fas fa-user' style='font-size:24px; margin-top:5px;color:white'></i> {{user}}</a>
     </div>
+{% endif %}
+
+{% if user.is_authenticated %}
+
+    <div class="quote">
+        <h3>{{user.profile.quotes.quote}} - {{user.profile.quotes.author}}</h1>
+    </div>
+
 {% endif %}
 
 {% endblock content %}

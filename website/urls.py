@@ -7,5 +7,6 @@ urlpatterns = [
     path('post', PostListView.as_view(), name='website-posts'),
     path('', views.home , name='website-home'),
     path('quotes' , views.tweets, name='website-quotes'),
+    path('spotify' , views.spotify , name='website-spotify')
     
 ]
